@@ -7,17 +7,17 @@
 Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Summary(pl):	Perlowy interfejs do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-%{pnam}
-Version:	1.033
+Version:	1.034
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	cdefdd73a2d3a9b74145e92bac9f5874
+# Source0-md5:	3033317649072ac80107eebe2edbf3b5
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	perl-ExtUtils-Depends >= 0.1
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.00
-BuildRequires:	perl-Glib >= 1.033
+BuildRequires:	perl-Glib >= 1.034
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	gtk+2 >= 2.0.0
