@@ -21,6 +21,8 @@ BuildRequires:	perl-Glib >= 1.013
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 Obsoletes:	perl-Gnome2-common
+Requires:	gtk+2 >= 2.0.0
+Requires:	perl-Glib >= 1.013
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
