@@ -26,12 +26,12 @@ Obsoletes:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The Gtk2 module allows a perl developer to use the Gtk+ graphical
+The Gtk2 module allows a perl developer to use the GTK+ graphical
 user interface library.
 
 %description -l pl
 Modu³ Gtk2 pozwala programistom perlowym na u¿ywanie biblioteki
-interfejsu graficznego Gtk+.
+interfejsu graficznego GTK+.
 
 %prep
 %setup -q -n %{pdir}-%{version}
