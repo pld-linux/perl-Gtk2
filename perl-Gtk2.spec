@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pnam	Gtk2
 Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
-Summary(pl):	Perlowy interfejs do wersji 2.x biblioteki Gimp Toolkit
+Summary(pl):	Interfejs perlowy do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-%{pnam}
 Version:	1.040
 Release:	1
