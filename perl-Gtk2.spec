@@ -54,7 +54,7 @@ LC_ALL=C \
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Gnome2 \
-        $RPM_BUILD_ROOT%{perl_vendorarch}/Gnome2
+	$RPM_BUILD_ROOT%{perl_vendorarch}/Gnome2
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
