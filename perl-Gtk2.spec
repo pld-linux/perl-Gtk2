@@ -14,10 +14,14 @@ Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
 # Source0-md5:	d5616cedf105e9327d6ed62653cb408f
 URL:		http://gtk2-perl.sf.net/
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	perl-ExtUtils-Depends >= 0.1
+BuildRequires:	perl-ExtUtils-PkgConfig >= 1.00
 BuildRequires:	perl-Glib >= 1.012
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+Requires:	gtk+2 >= 2.0.0
+Requires:	perl-Glib >= 1.012
 Obsoletes:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -49,7 +53,7 @@ install -d $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Gnome2 \
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/%{pnam}/*.pod
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/%{pnam}/{*,*/*}.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -57,12 +61,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS Changes TODO
-%{perl_vendorarch}/%{pnam}
-%{perl_vendorarch}/%{pnam}.pm
+%{perl_vendorarch}/Gtk2
+%{perl_vendorarch}/Gtk2.pm
 %dir %{perl_vendorarch}/Gnome2
-%dir %{perl_vendorarch}/auto/Gnome2
 %dir %{perl_vendorarch}/auto/Gtk2
-%attr(755,root,root) %{perl_vendorarch}/auto/%{pnam}/*.so
-%{perl_vendorarch}/auto/%{pnam}/*.bs
-%{perl_vendorarch}/auto/Gtk2
+%{perl_vendorarch}/auto/Gtk2/*.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Gtk2/*.so
+%dir %{perl_vendorarch}/auto/Gnome2
 %{_mandir}/man3/*
