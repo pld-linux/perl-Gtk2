@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _with_tests - perform "make test" (requires X server)
+%bcond_with	tests	# perform "make test" (requires X server)
 #
 %include	/usr/lib/rpm/macros.perl
 %define	pnam	Gtk2
@@ -38,13 +38,15 @@ interfejsu graficznego Gtk+.
 %{__make} \
 	OPTIMIZE="%{rpmcflags}"
 
-%{?_with_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/%{pnam}/*.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
