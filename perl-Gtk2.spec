@@ -14,7 +14,7 @@ Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pdir}-%{version}.tar.gz
 # Source0-md5:	f7a14ff2e86dc66c9a06539613b70576
 URL:		http://gtk2-perl.sf.net/
-BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	perl-ExtUtils-Depends >= 0.201
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
 BuildRequires:	perl-Glib >= 1.061
