@@ -7,21 +7,21 @@
 Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Summary(pl):	Interfejs perlowy do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-Gtk2
-Version:	1.061
+Version:	1.080
 Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pdir}-%{version}.tar.gz
-# Source0-md5:	f7a14ff2e86dc66c9a06539613b70576
+# Source0-md5:	fa9bf175f72291ae7d843912fed4651a
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	perl-ExtUtils-Depends >= 0.201
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
-BuildRequires:	perl-Glib >= 1.061
+BuildRequires:	perl-Glib >= 1.080
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	gtk+2 >= 2.0.0
-Requires:	perl-Glib >= 1.061
+Requires:	perl-Glib >= 1.080
 Obsoletes:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -59,7 +59,7 @@ install -d $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Gnome2 \
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/%{pdir}/{*,*/*}.pod
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/%{pdir}/{*,*/*,*/*/*}.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
