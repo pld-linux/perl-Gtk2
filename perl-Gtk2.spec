@@ -3,15 +3,15 @@
 %bcond_with	tests	# perform "make test" (requires X server)
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pnam	Gtk2
+%define	pdir	Gtk2
 Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Summary(pl):	Interfejs perlowy do wersji 2.x biblioteki Gimp Toolkit
-Name:		perl-%{pnam}
+Name:		perl-Gtk2
 Version:	1.042
 Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
-Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/gtk2-perl/%{pdir}-%{version}.tar.gz
 # Source0-md5:	2e53d0ed55a6a0aef5db701c16636a37
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel >= 2.0.0
@@ -34,7 +34,7 @@ Modu³ Gtk2 pozwala programistom perlowym na u¿ywanie biblioteki
 interfejsu graficznego Gtk+.
 
 %prep
-%setup -q -n %{pnam}-%{version}
+%setup -q -n %{pdir}-%{version}
 
 # "use Gtk2 '-init'" requires X display; fortunately Gtk2::Stock->lookup
 # works without this
@@ -59,7 +59,7 @@ install -d $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Gnome2 \
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/%{pnam}/{*,*/*}.pod
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/%{pdir}/{*,*/*}.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
