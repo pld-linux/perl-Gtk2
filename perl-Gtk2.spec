@@ -2,9 +2,6 @@
 # Conditional build:
 # _with_tests - perform "make test" (requires X server)
 #
-# TODO:                                                                         
-# - check BRs                                                                   
-#              
 %include	/usr/lib/rpm/macros.perl
 %define	pnam	Gtk2
 Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
@@ -19,8 +16,9 @@ Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel
 BuildRequires:	perl-devel >= 5.8.0
-BuildRequires:	perl(ExtUtils::Depends)
-BuildRequires:	perl(Glib::PkgConfig)
+BuildRequires:	perl-ExtUtils-Depends
+BuildRequires:	perl-Glib
+BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -58,5 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS Changes TODO
 %{perl_vendorarch}/%{pnam}
 %{perl_vendorarch}/%{pnam}.pm
-%{perl_vendorarch}/auto/*
+%dir %{perl_vendorarch}/auto/Gtk2
+%attr(755,root,root) %{perl_vendorarch}/auto/Gtk2/*.so
+%{perl_vendorarch}/auto/Gtk2/*.bs
 %{_mandir}/man3/*
