@@ -7,21 +7,21 @@
 Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Summary(pl):	Perlowy interfejs do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-%{pnam}
-Version:	1.023
+Version:	1.040
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	22cbac1b1d1869f9af88114f4167de5d
+# Source0-md5:	51d643e79dcd369885cf036a1f8c3d89
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel >= 2.0.0
-BuildRequires:	perl-ExtUtils-Depends >= 0.1
-BuildRequires:	perl-ExtUtils-PkgConfig >= 1.00
-BuildRequires:	perl-Glib >= 1.021
+BuildRequires:	perl-ExtUtils-Depends >= 0.201
+BuildRequires:	perl-ExtUtils-PkgConfig >= 1.03
+BuildRequires:	perl-Glib >= 1.040
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	gtk+2 >= 2.0.0
-Requires:	perl-Glib >= 1.021
+Requires:	perl-Glib >= 1.040
 Obsoletes:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -66,7 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS Changes TODO
+%doc AUTHORS ChangeLog README TODO
 %{perl_vendorarch}/Gtk2
 %{perl_vendorarch}/Gtk2.pm
 %dir %{perl_vendorarch}/Gnome2
