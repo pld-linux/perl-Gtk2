@@ -11,12 +11,12 @@
 %define	pnam	Gtk2
 Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Name:		perl-%{pnam}
-Version:	0.90
+Version:	0.91
 Release:	0.1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	e1065e70663f3bcd6448fd8ec94484b3
+# Source0-md5:	6c652d7d44e632d8e8d82ad0b72d9641
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel
 BuildRequires:	perl-devel >= 5.8.0
