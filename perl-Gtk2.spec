@@ -36,10 +36,16 @@ interfejsu graficznego Gtk+.
 %prep
 %setup -q -n %{pnam}-%{version}
 
+# "use Gtk2 '-init'" requires X display; fortunately Gtk2::Stock->lookup
+# works without this
+%{__perl} -pi -e "s/'-init'//" podifystockitems.pl
+
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 
+# force C locale to avoid using localized strings in (en) manuals
+LC_ALL=C \
 %{__make} \
 	OPTIMIZE="%{rpmcflags}"
 
