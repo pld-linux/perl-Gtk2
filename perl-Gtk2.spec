@@ -67,8 +67,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README TODO
-%{perl_vendorarch}/Gtk2
 %{perl_vendorarch}/Gtk2.pm
+%dir %{perl_vendorarch}/Gtk2
+%{perl_vendorarch}/Gtk2/*.pm
+%dir %{perl_vendorarch}/Gtk2/Gdk
+%{perl_vendorarch}/Gtk2/Gdk/*.pm
+%{perl_vendorarch}/Gtk2/Install
 %dir %{perl_vendorarch}/Gnome2
 %dir %{perl_vendorarch}/auto/Gtk2
 %{perl_vendorarch}/auto/Gtk2/*.bs
