@@ -15,9 +15,10 @@ Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
 # Source0-md5:	d5616cedf105e9327d6ed62653cb408f
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel
-BuildRequires:	perl-devel >= 5.8.0
 BuildRequires:	perl-Glib >= 1.012
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+Obsoletes:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -58,11 +59,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS Changes TODO
 %{perl_vendorarch}/%{pnam}
 %{perl_vendorarch}/%{pnam}.pm
+%dir %{perl_vendorarch}/Gnome2
 %dir %{perl_vendorarch}/auto/Gnome2
 %dir %{perl_vendorarch}/auto/Gtk2
-%dir %{perl_vendorarch}/Gnome2
 %attr(755,root,root) %{perl_vendorarch}/auto/%{pnam}/*.so
 %{perl_vendorarch}/auto/%{pnam}/*.bs
 %{perl_vendorarch}/auto/Gtk2
-%{perl_vendorarch}/Gnome2
 %{_mandir}/man3/*
