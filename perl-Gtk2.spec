@@ -1,15 +1,14 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
-# note: test requires running X server
+# _with_tests - perform "make test" (requires X server)
 #
 # TODO:                                                                         
 # - check BRs                                                                   
-# - intl descs                                                                  
 #              
 %include	/usr/lib/rpm/macros.perl
 %define	pnam	Gtk2
 Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
+Summary(pl):	Perlowy interfejs do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-%{pnam}
 Version:	0.91
 Release:	0.1
@@ -29,6 +28,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The Gtk2 module allows a perl developer to use the Gtk+ graphical
 user interface library.
 
+%description -l pl
+Modu³ Gtk2 pozwala programistom perlowym na u¿ywanie biblioteki
+interfejsu graficznego Gtk+.
+
 %prep
 %setup -q -n %{pnam}-%{version}
 
@@ -39,7 +42,7 @@ user interface library.
 %{__make} \
 	OPTIMIZE="%{rpmcflags}"
 
-%{!?_without_tests:%{__make} test}
+%{?_with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
