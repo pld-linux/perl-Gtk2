@@ -7,16 +7,16 @@
 Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Summary(pl):	Perlowy interfejs do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-%{pnam}
-Version:	1.00
+Version:	1.012
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	a889fe12f1b3f05aa7d466f7efc81d49
+# Source0-md5:	d5616cedf105e9327d6ed62653cb408f
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel
 BuildRequires:	perl-devel >= 5.8.0
-BuildRequires:	perl-Glib >= 1.00
+BuildRequires:	perl-Glib >= 1.012
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,6 +42,8 @@ interfejsu graficznego Gtk+.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Gnome2 \
+        $RPM_BUILD_ROOT%{perl_vendorarch}/Gnome2
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -56,7 +58,11 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS Changes TODO
 %{perl_vendorarch}/%{pnam}
 %{perl_vendorarch}/%{pnam}.pm
+%dir %{perl_vendorarch}/auto/Gnome2
 %dir %{perl_vendorarch}/auto/Gtk2
-%attr(755,root,root) %{perl_vendorarch}/auto/Gtk2/*.so
-%{perl_vendorarch}/auto/Gtk2/*.bs
+%dir %{perl_vendorarch}/Gnome2
+%attr(755,root,root) %{perl_vendorarch}/auto/%{pnam}/*.so
+%{perl_vendorarch}/auto/%{pnam}/*.bs
+%{perl_vendorarch}/auto/Gtk2
+%{perl_vendorarch}/Gnome2
 %{_mandir}/man3/*
