@@ -1,3 +1,5 @@
+# TODO:
+# - perl-Gtk2 shouldn't depend on perl-devel (ExtUtils::MakeMaker). create -devel package?
 #
 # Conditional build:
 %bcond_with	tests	# perform "make test" (requires X server)
@@ -20,6 +22,7 @@ BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
 BuildRequires:	perl-Glib >= 1.081
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.192
 Requires:	gtk+2 >= 2.0.0
 Requires:	perl-Glib >= 1.081
 Obsoletes:	perl-Gnome2-common
@@ -44,8 +47,6 @@ interfejsu graficznego GTK+.
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 
-# force C locale to avoid using localized strings in (en) manuals
-LC_ALL=C \
 %{__make} \
 	OPTIMIZE="%{rpmcflags}"
 
