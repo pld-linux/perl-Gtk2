@@ -13,7 +13,7 @@ Version:	1.101
 Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
-Source0:	http://heanet.dl.sourceforge.net/gtk2-perl/%{pdir}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/gtk2-perl/%{pdir}-%{version}.tar.gz
 # Source0-md5:	35646a71945e598228957a43bc3b7efe
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel >= 1:2.0.0
@@ -29,8 +29,8 @@ Obsoletes:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The Gtk2 module allows a perl developer to use the GTK+ graphical
-user interface library.
+The Gtk2 module allows a perl developer to use the GTK+ graphical user
+interface library.
 
 %description -l pl
 Modu³ Gtk2 pozwala programistom perlowym na u¿ywanie biblioteki
