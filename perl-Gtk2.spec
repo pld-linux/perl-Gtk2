@@ -1,5 +1,6 @@
 # TODO:
 # - perl-Gtk2 shouldn't depend on perl-devel (ExtUtils::MakeMaker). create -devel package?
+# - review `Unrecognized argument in LIBS ignored: '-pthread'' (from buildlog)
 #
 # Conditional build:
 %bcond_with	tests	# perform "make test" (requires X server)
@@ -10,7 +11,7 @@ Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Summary(pl):	Interfejs perlowy do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-Gtk2
 Version:	1.101
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pdir}-%{version}.tar.gz
@@ -54,8 +55,8 @@ interfejsu graficznego GTK+.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Gnome2 \
-	$RPM_BUILD_ROOT%{perl_vendorarch}/Gnome2
+install -d $RPM_BUILD_ROOT%{perl_vendorarch}/{auto/Gnome2,Gnome2} \
+	$RPM_BUILD_ROOT%{perl_vendorlib}/Gtk2/Ex
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -79,4 +80,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/auto/Gtk2/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Gtk2/*.so
 %dir %{perl_vendorarch}/auto/Gnome2
+%dir %{perl_vendorlib}/Gtk2
+%dir %{perl_vendorlib}/Gtk2/Ex
 %{_mandir}/man3/*
