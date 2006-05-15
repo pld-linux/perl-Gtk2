@@ -1,5 +1,6 @@
 # TODO:
 # - perl-Gtk2 shouldn't depend on perl-devel (ExtUtils::MakeMaker). create -devel package?
+# - review `Unrecognized argument in LIBS ignored: '-pthread'' (from buildlog)
 #
 # Conditional build:
 %bcond_with	tests	# perform "make test" (requires X server)
@@ -9,28 +10,28 @@
 Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Summary(pl):	Interfejs perlowy do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-Gtk2
-Version:	1.100
+Version:	1.121
 Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
-Source0:	http://heanet.dl.sourceforge.net/gtk2-perl/%{pdir}-%{version}.tar.gz
-# Source0-md5:	498eb71cedb0fc619654cebf43a41f8e
+Source0:	http://dl.sourceforge.net/gtk2-perl/%{pdir}-%{version}.tar.gz
+# Source0-md5:	90bd58334c49a4db9d812537de5b1620
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	perl-ExtUtils-Depends >= 0.201
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
-BuildRequires:	perl-Glib >= 1.100
+BuildRequires:	perl-Glib >= 1.120
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.192
 Requires:	gtk+2 >= 2.0.0
-Requires:	perl-Glib >= 1.100
+Requires:	perl-Glib >= 1.120
 Obsoletes:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The Gtk2 module allows a perl developer to use the GTK+ graphical
-user interface library.
+The Gtk2 module allows a perl developer to use the GTK+ graphical user
+interface library.
 
 %description -l pl
 Modu³ Gtk2 pozwala programistom perlowym na u¿ywanie biblioteki
@@ -54,8 +55,8 @@ interfejsu graficznego GTK+.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Gnome2 \
-	$RPM_BUILD_ROOT%{perl_vendorarch}/Gnome2
+install -d $RPM_BUILD_ROOT%{perl_vendorarch}/{auto/Gnome2,Gnome2} \
+	$RPM_BUILD_ROOT%{perl_vendorlib}/Gtk2/Ex
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -79,4 +80,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/auto/Gtk2/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Gtk2/*.so
 %dir %{perl_vendorarch}/auto/Gnome2
+%dir %{perl_vendorlib}/Gtk2
+%dir %{perl_vendorlib}/Gtk2/Ex
 %{_mandir}/man3/*
