@@ -1,5 +1,4 @@
 # TODO:
-# - perl-Gtk2 shouldn't depend on perl-devel (ExtUtils::MakeMaker). create -devel package?
 # - review `Unrecognized argument in LIBS ignored: '-pthread'' (from buildlog)
 #
 # Conditional build:
@@ -42,10 +41,6 @@ interfejsu graficznego GTK+.
 %prep
 %setup -q -n %{pdir}-%{version}
 
-# "use Gtk2 '-init'" requires X display; fortunately Gtk2::Stock->lookup
-# works without this
-%{__perl} -pi -e "s/'-init'//" podifystockitems.pl
-
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
@@ -64,6 +59,7 @@ install -d $RPM_BUILD_ROOT%{perl_vendorarch}/{auto/Gnome2,Gnome2} \
 	DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/%{pdir}/{*,*/*,*/*/*}.pod
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Gtk2.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
