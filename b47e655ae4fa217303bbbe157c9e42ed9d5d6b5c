@@ -1,0 +1,5 @@
+- added %{perl_vendorlib}/Gtk2/Ex directories for perl-Gtk2-Ex* packages
+  (suggested by qboosh)
+- added to TODO warning from buildlog for reviewing:
+  Unrecognized argument in LIBS ignored: '-pthread'
+- rel.2
