@@ -1,5 +1,4 @@
 # TODO:
-# - perl-Gtk2 shouldn't depend on perl-devel (ExtUtils::MakeMaker). create -devel package?
 # - review `Unrecognized argument in LIBS ignored: '-pthread'' (from buildlog)
 #
 # Conditional build:
@@ -10,22 +9,24 @@
 Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Summary(pl):	Interfejs perlowy do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-Gtk2
-Version:	1.121
+Version:	1.133
 Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pdir}-%{version}.tar.gz
-# Source0-md5:	90bd58334c49a4db9d812537de5b1620
-URL:		http://gtk2-perl.sf.net/
+# Source0-md5:	5b3676c9197322cf3c4de6c5c0535587
+URL:		http://gtk2-perl.sourceforge.net/
 BuildRequires:	gtk+2-devel >= 1:2.0.0
+BuildRequires:	perl-Cairo >= 0.92
 BuildRequires:	perl-ExtUtils-Depends >= 0.201
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
-BuildRequires:	perl-Glib >= 1.120
+BuildRequires:	perl-Glib >= 1.132
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.192
 Requires:	gtk+2 >= 2.0.0
-Requires:	perl-Glib >= 1.120
+Requires:	perl-Cairo >= 0.92
+Requires:	perl-Glib >= 1.132
 Obsoletes:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,10 +40,6 @@ interfejsu graficznego GTK+.
 
 %prep
 %setup -q -n %{pdir}-%{version}
-
-# "use Gtk2 '-init'" requires X display; fortunately Gtk2::Stock->lookup
-# works without this
-%{__perl} -pi -e "s/'-init'//" podifystockitems.pl
 
 %build
 %{__perl} Makefile.PL \
@@ -62,6 +59,7 @@ install -d $RPM_BUILD_ROOT%{perl_vendorarch}/{auto/Gnome2,Gnome2} \
 	DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/%{pdir}/{*,*/*,*/*/*}.pod
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Gtk2.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
