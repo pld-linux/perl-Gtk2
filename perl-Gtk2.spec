@@ -7,7 +7,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Gtk2
 Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
-Summary(pl):	Interfejs perlowy do wersji 2.x biblioteki Gimp Toolkit
+Summary(pl.UTF-8):   Interfejs perlowy do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-Gtk2
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
 Version:	1.141
@@ -35,8 +35,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The Gtk2 module allows a perl developer to use the GTK+ graphical user
 interface library.
 
-%description -l pl
-Modu≥ Gtk2 pozwala programistom perlowym na uøywanie biblioteki
+%description -l pl.UTF-8
+Modu≈Ç Gtk2 pozwala programistom perlowym na u≈ºywanie biblioteki
 interfejsu graficznego GTK+.
 
 %prep
