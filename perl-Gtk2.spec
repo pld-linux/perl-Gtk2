@@ -65,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TODO
+%doc AUTHORS ChangeLog NEWS README TODO
 %{perl_vendorarch}/Gtk2.pm
 %dir %{perl_vendorarch}/Gtk2
 %{perl_vendorarch}/Gtk2/*.pm
