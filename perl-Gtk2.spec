@@ -1,5 +1,3 @@
-# TODO:
-# - review `Unrecognized argument in LIBS ignored: '-pthread'' (from buildlog)
 #
 # Conditional build:
 %bcond_with	tests	# perform "make test" (requires X server)
@@ -10,24 +8,24 @@ Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Summary(pl.UTF-8):	Interfejs perlowy do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-Gtk2
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
-Version:	1.141
-Release:	0.1
+Version:	1.144
+Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pdir}-%{version}.tar.gz
-# Source0-md5:	bc7f61c80bef55ae9e0edd4badedddd3
+# Source0-md5:	bc89094b40e81659562a3229fbf6bf3d
 URL:		http://gtk2-perl.sourceforge.net/
 BuildRequires:	gtk+2-devel >= 2:2.10.2
 BuildRequires:	perl-Cairo >= 1.00
 BuildRequires:	perl-ExtUtils-Depends >= 0.201
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
-BuildRequires:	perl-Glib >= 1.140
+BuildRequires:	perl-Glib >= 1.144
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.192
 Requires:	gtk+2 >= 2:2.10.2
-Requires:	perl-Cairo >= 1.00
-Requires:	perl-Glib >= 1.140
+Requires:	perl-Cairo >= 1.040
+Requires:	perl-Glib >= 1.144
 Obsoletes:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
