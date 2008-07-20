@@ -8,26 +8,26 @@ Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Summary(pl.UTF-8):	Interfejs perlowy do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-Gtk2
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
-Version:	1.180
+Version:	1.183
 Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pdir}-%{version}.tar.gz
-# Source0-md5:	9ee23148e86f9b07b40bea6ff95a7a2d
+# Source0-md5:	432785e9a3e9479eb11c56397caa6ffa
 URL:		http://gtk2-perl.sourceforge.net/
-BuildRequires:	gtk+2-devel >= 2:2.12
+BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	pango-devel >= 1:1.18
-BuildRequires:	perl-Cairo >= 1.00
+BuildRequires:	perl-Cairo >= 1.060
 BuildRequires:	perl-ExtUtils-Depends >= 0.201
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
-BuildRequires:	perl-Glib >= 1.163
+BuildRequires:	perl-Glib >= 1.183
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.192
 Requires:	gtk+2 >= 2:2.12.0
 Requires:	pango >= 1:1.18
-Requires:	perl-Cairo >= 1.040
-Requires:	perl-Glib >= 1.163
+Requires:	perl-Cairo >= 1.060
+Requires:	perl-Glib >= 1.183
 Obsoletes:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -56,7 +56,7 @@ interfejsu graficznego GTK+.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{perl_vendorlib}/Gtk2/Ex
 
-%{__make} install \
+%{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Gtk2/{*,*/*,*/*/*}.pod
