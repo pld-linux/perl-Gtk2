@@ -19,6 +19,7 @@ BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	pango-devel >= 1:1.18
 BuildRequires:	perl-Cairo >= 1.060
 BuildRequires:	perl-ExtUtils-Depends >= 0.201
+BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
 BuildRequires:	perl-Glib >= 1.183
 BuildRequires:	perl-devel >= 1:5.8.0
