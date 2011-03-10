@@ -18,10 +18,10 @@ URL:		http://gtk2-perl.sourceforge.net/
 BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	pango-devel >= 1:1.18
 BuildRequires:	perl-Cairo >= 1.060
-BuildRequires:	perl-ExtUtils-Depends >= 0.201
+BuildRequires:	perl-ExtUtils-Depends >= 0.300
 BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
-BuildRequires:	perl-Glib >= 1.183
+BuildRequires:	perl-Glib >= 1.220
 BuildRequires:	perl-Pango >= 1.220
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -29,7 +29,8 @@ BuildRequires:	rpmbuild(macros) >= 1.192
 Requires:	gtk+2 >= 2:2.12.0
 Requires:	pango >= 1:1.18
 Requires:	perl-Cairo >= 1.060
-Requires:	perl-Glib >= 1.183
+Requires:	perl-Glib >= 1.220
+Requires:	perl-Pango >= 1.220
 Obsoletes:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
