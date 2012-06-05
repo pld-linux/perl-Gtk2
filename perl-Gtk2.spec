@@ -8,12 +8,12 @@ Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Summary(pl.UTF-8):	Interfejs perlowy do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-Gtk2
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
-Version:	1.224
+Version:	1.244
 Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://downloads.sourceforge.net/gtk2-perl/%{pdir}-%{version}.tar.gz
-# Source0-md5:	0d83e00179bcf1caa2b8974248b6a869
+# Source0-md5:	191fda807f44a7c82d699838bf544bca
 URL:		http://gtk2-perl.sourceforge.net/
 BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	pango-devel >= 1:1.18
@@ -21,7 +21,7 @@ BuildRequires:	perl-Cairo >= 1.060
 BuildRequires:	perl-ExtUtils-Depends >= 0.300
 BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
-BuildRequires:	perl-Glib-devel >= 1.220
+BuildRequires:	perl-Glib-devel >= 1.240
 BuildRequires:	perl-Pango >= 1.220
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -29,7 +29,7 @@ BuildRequires:	rpmbuild(macros) >= 1.192
 Requires:	gtk+2 >= 2:2.12.0
 Requires:	pango >= 1:1.18
 Requires:	perl-Cairo >= 1.060
-Requires:	perl-Glib >= 1.220
+Requires:	perl-Glib >= 1.240
 Requires:	perl-Pango >= 1.220
 Obsoletes:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -47,7 +47,7 @@ Summary:	Development files for Perl Gtk2 bindings
 Summary(pl.UTF-8):	Pliki programistyczne wiązań Gtk2 dla Perla
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
-Requires:	perl-Glib-devel >= 1.220
+Requires:	perl-Glib-devel >= 1.240
 
 %description devel
 Development files for Perl Gtk2 bindings.
@@ -105,6 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gtk2::Accelerator.3pm*
 %{_mandir}/man3/Gtk2::Action.3pm*
 %{_mandir}/man3/Gtk2::ActionGroup.3pm*
+%{_mandir}/man3/Gtk2::Activatable.3pm*
 %{_mandir}/man3/Gtk2::Adjustment.3pm*
 %{_mandir}/man3/Gtk2::Alignment.3pm*
 %{_mandir}/man3/Gtk2::Arrow.3pm*
@@ -121,13 +122,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gtk2::Calendar.3pm*
 %{_mandir}/man3/Gtk2::CellEditable.3pm*
 %{_mandir}/man3/Gtk2::CellLayout.3pm*
-%{_mandir}/man3/Gtk2::CellLayout::DataFunc.3pm*
 %{_mandir}/man3/Gtk2::CellRenderer.3pm*
 %{_mandir}/man3/Gtk2::CellRendererAccel.3pm*
 %{_mandir}/man3/Gtk2::CellRendererCombo.3pm*
 %{_mandir}/man3/Gtk2::CellRendererPixbuf.3pm*
 %{_mandir}/man3/Gtk2::CellRendererProgress.3pm*
 %{_mandir}/man3/Gtk2::CellRendererSpin.3pm*
+%{_mandir}/man3/Gtk2::CellRendererSpinner.3pm*
 %{_mandir}/man3/Gtk2::CellRendererText.3pm*
 %{_mandir}/man3/Gtk2::CellRendererToggle.3pm*
 %{_mandir}/man3/Gtk2::CellView.3pm*
@@ -147,6 +148,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gtk2::DrawingArea.3pm*
 %{_mandir}/man3/Gtk2::Editable.3pm*
 %{_mandir}/man3/Gtk2::Entry.3pm*
+%{_mandir}/man3/Gtk2::EntryBuffer.3pm*
 %{_mandir}/man3/Gtk2::EntryCompletion.3pm*
 %{_mandir}/man3/Gtk2::EventBox.3pm*
 %{_mandir}/man3/Gtk2::Expander.3pm*
@@ -168,6 +170,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gtk2::HButtonBox.3pm*
 %{_mandir}/man3/Gtk2::HPaned.3pm*
 %{_mandir}/man3/Gtk2::HRuler.3pm*
+%{_mandir}/man3/Gtk2::HSV.3pm*
 %{_mandir}/man3/Gtk2::HScale.3pm*
 %{_mandir}/man3/Gtk2::HScrollbar.3pm*
 %{_mandir}/man3/Gtk2::HSeparator.3pm*
@@ -185,6 +188,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gtk2::IconView.3pm*
 %{_mandir}/man3/Gtk2::Image.3pm*
 %{_mandir}/man3/Gtk2::ImageMenuItem.3pm*
+%{_mandir}/man3/Gtk2::InfoBar.3pm*
 %{_mandir}/man3/Gtk2::InputDialog.3pm*
 %{_mandir}/man3/Gtk2::Invisible.3pm*
 %{_mandir}/man3/Gtk2::Item.3pm*
@@ -204,6 +208,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gtk2::Misc.3pm*
 %{_mandir}/man3/Gtk2::Notebook.3pm*
 %{_mandir}/man3/Gtk2::Object.3pm*
+%{_mandir}/man3/Gtk2::OffscreenWindow.3pm*
 %{_mandir}/man3/Gtk2::OptionMenu.3pm*
 %{_mandir}/man3/Gtk2::Orientable.3pm*
 %{_mandir}/man3/Gtk2::PageSetup.3pm*
@@ -248,6 +253,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gtk2::SizeGroup.3pm*
 %{_mandir}/man3/Gtk2::Socket.3pm*
 %{_mandir}/man3/Gtk2::SpinButton.3pm*
+%{_mandir}/man3/Gtk2::Spinner.3pm*
 %{_mandir}/man3/Gtk2::StatusIcon.3pm*
 %{_mandir}/man3/Gtk2::Statusbar.3pm*
 %{_mandir}/man3/Gtk2::Stock.3pm*
@@ -269,6 +275,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gtk2::ToggleToolButton.3pm*
 %{_mandir}/man3/Gtk2::ToolButton.3pm*
 %{_mandir}/man3/Gtk2::ToolItem.3pm*
+%{_mandir}/man3/Gtk2::ToolItemGroup.3pm*
+%{_mandir}/man3/Gtk2::ToolPalette.3pm*
 %{_mandir}/man3/Gtk2::ToolShell.3pm*
 %{_mandir}/man3/Gtk2::Toolbar.3pm*
 %{_mandir}/man3/Gtk2::Tooltip.3pm*
