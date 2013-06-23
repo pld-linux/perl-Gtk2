@@ -8,28 +8,28 @@ Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Summary(pl.UTF-8):	Interfejs perlowy do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-Gtk2
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
-Version:	1.244
-Release:	2
+Version:	1.247
+Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://downloads.sourceforge.net/gtk2-perl/%{pdir}-%{version}.tar.gz
-# Source0-md5:	191fda807f44a7c82d699838bf544bca
+# Source0-md5:	b65b0293cce3ac3786c37a7fa508e506
 URL:		http://gtk2-perl.sourceforge.net/
 BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	pango-devel >= 1:1.18
-BuildRequires:	perl-Cairo >= 1.060
+BuildRequires:	perl-Cairo-devel >= 1.060
 BuildRequires:	perl-ExtUtils-Depends >= 0.300
 BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.06
-BuildRequires:	perl-Glib-devel >= 1.240
-BuildRequires:	perl-Pango >= 1.220
+BuildRequires:	perl-Glib-devel >= 1.280
+BuildRequires:	perl-Pango-devel >= 1.220
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.192
 Requires:	gtk+2 >= 2:2.12.0
 Requires:	pango >= 1:1.18
 Requires:	perl-Cairo >= 1.060
-Requires:	perl-Glib >= 1.240
+Requires:	perl-Glib >= 1.280
 Requires:	perl-Pango >= 1.220
 Obsoletes:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -47,7 +47,9 @@ Summary:	Development files for Perl Gtk2 bindings
 Summary(pl.UTF-8):	Pliki programistyczne wiązań Gtk2 dla Perla
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
-Requires:	perl-Glib-devel >= 1.240
+Requires:	gtk+2-devel >= 2:2.12.0
+Requires:	perl-Glib-devel >= 1.280
+Requires:	perl-Pango-devel >= 1.220
 
 %description devel
 Development files for Perl Gtk2 bindings.
