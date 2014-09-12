@@ -95,7 +95,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/Gtk2/Gdk
 %{perl_vendorarch}/Gtk2/Gdk/Keysyms.pm
 %dir %{perl_vendorarch}/auto/Gtk2
-%{perl_vendorarch}/auto/Gtk2/Gtk2.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Gtk2/Gtk2.so
 %dir %{perl_vendorlib}/Gtk2
 %dir %{perl_vendorlib}/Gtk2/Ex
