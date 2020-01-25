@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	tests	# perform "make test" (requires X server)
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Gtk2
 Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Summary(pl.UTF-8):	Interfejs perlowy do wersji 2.x biblioteki Gimp Toolkit
