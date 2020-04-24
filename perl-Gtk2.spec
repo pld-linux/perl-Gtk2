@@ -7,12 +7,12 @@ Summary:	Perl interface to the 2.x series of the Gimp Toolkit library
 Summary(pl.UTF-8):	Interfejs perlowy do wersji 2.x biblioteki Gimp Toolkit
 Name:		perl-Gtk2
 # note: versions 1.x[13579]y are unstable, if you want them, please use DEVEL branch
-Version:	1.24992
-Release:	3
+Version:	1.24993
+Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Perl
 Source0:	http://downloads.sourceforge.net/gtk2-perl/%{pdir}-%{version}.tar.gz
-# Source0-md5:	891c0a9deeeba3b0d01ceb7b8a7a32e8
+# Source0-md5:	4bc5bee6ec7bfbd578ec51f502db2734
 URL:		http://gtk2-perl.sourceforge.net/
 BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	pango-devel >= 1:1.18
@@ -24,7 +24,7 @@ BuildRequires:	perl-Glib-devel >= 1.280
 BuildRequires:	perl-Pango-devel >= 1.220
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	rpmbuild(macros) >= 1.192
+BuildRequires:	rpmbuild(macros) >= 1.745
 Requires:	gtk+2 >= 2:2.12.0
 Requires:	pango >= 1:1.18
 Requires:	perl-Cairo >= 1.060
