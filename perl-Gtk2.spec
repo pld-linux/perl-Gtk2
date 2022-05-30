@@ -30,7 +30,7 @@ Requires:	pango >= 1:1.18
 Requires:	perl-Cairo >= 1.060
 Requires:	perl-Glib >= 1.280
 Requires:	perl-Pango >= 1.220
-Obsoletes:	perl-Gnome2-common
+Obsoletes:	perl-Gnome2-common < 1.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
